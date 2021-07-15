@@ -1,0 +1,29 @@
+{
+  "name": "RegistroDeOcorrencias-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/C0deBend3rs/RegistroDeOcorrencias-back.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/C0deBend3rs/RegistroDeOcorrencias-back/issues"
+  },
+  "homepage": "https://github.com/C0deBend3rs/RegistroDeOcorrencias-back#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.6.0",
+    "sequelize": "^6.6.5",
+    "sequelize-cli": "^6.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

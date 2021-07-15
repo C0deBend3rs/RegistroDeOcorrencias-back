@@ -1,0 +1,22 @@
+{
+  "host": "ec2-54-145-249-177.compute-1.amazonaws.com",
+  "database": "ddh81g7jlr71ad",
+  "username": "aclnotonqaupkt",
+  "port": 5432,
+  "password": "42a6f8eeeff346e069905fc4524563289ff27ee92cae900d77384b9df1ed617a",
+  "dialect": "postgres",
+  "dialectOptions": {
+    "ssl": {
+      "require": true,
+      "rejectUnauthorized": false
+    },
+    "keepAlive": true
+  },
+  "ssl": true,
+  "logging": false,
+  "seederStorage": "sequelize",
+  "define": {
+    "timestamps": true,
+    "underscored": true
+  }
+}
