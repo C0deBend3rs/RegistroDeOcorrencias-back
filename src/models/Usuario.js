@@ -16,6 +16,8 @@ class Usuario extends Model {
         this.hasOne(models.Administrador, {foreignKey: 'username', as: 'adm'})
         this.hasOne(models.Gerenciador, {foreignKey: 'username', as: 'gerenciador'})
         this.hasOne(models.Solicitante, {foreignKey: 'username', as: 'solicitante'})
+        this.hasMany(models.Ocorrencia, {foreignKey: 'username', as: 'ocorrencias'});
+
     }
 }
 

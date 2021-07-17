@@ -10,6 +10,8 @@ const Filial = require('../models/Filial');
 const Predio = require('../models/Predio');
 const Comodo = require('../models/Comodo');
 const Espaco_Aberto = require('../models/Espaco_Aberto');
+const Ocorrencia = require('../models/Ocorrencia');
+
 
 
 
@@ -24,6 +26,7 @@ Filial.init(connection);
 Predio.init(connection);
 Comodo.init(connection);
 Espaco_Aberto.init(connection);
+Ocorrencia.init(connection);
 
 
 
@@ -37,6 +40,7 @@ Filial.associate(connection.models);
 Predio.associate(connection.models);
 Comodo.associate(connection.models);
 Espaco_Aberto.associate(connection.models);
+Ocorrencia.associate(connection.models);
 
 
 
