@@ -15,6 +15,7 @@ class Administrador extends Model {
         this.hasMany(models.Filial, {foreignKey: 'username', as: 'filiais'});
         this.hasMany(models.Predio, {foreignKey: 'username', as: 'predios'});
         this.hasMany(models.Comodo, {foreignKey: 'username', as: 'comodos'});
+        this.hasMany(models.Espaco_Aberto, {foreignKey: 'username', as: 'espacos_abertos'});
     }
 }
 
