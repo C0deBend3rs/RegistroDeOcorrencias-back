@@ -13,6 +13,7 @@ const Espaco_Aberto = require('../models/Espaco_Aberto');
 const Ocorrencia = require('../models/Ocorrencia');
 const Comentario = require('../models/Comentario');
 const Ocorrencia_Espaco_Aberto = require('../models/Ocorrencia_Espaco_Aberto');
+const Ocorrencia_Comodo = require('../models/Ocorrencia_Comodo');
 
 
 
@@ -31,6 +32,7 @@ Espaco_Aberto.init(connection);
 Ocorrencia.init(connection);
 Comentario.init(connection);
 Ocorrencia_Espaco_Aberto.init(connection);
+Ocorrencia_Comodo.init(connection);
 
 
 
@@ -48,6 +50,7 @@ Espaco_Aberto.associate(connection.models);
 Ocorrencia.associate(connection.models);
 Comentario.associate(connection.models);
 Ocorrencia_Espaco_Aberto.associate(connection.models);
+Ocorrencia_Comodo.associate(connection.models);
 
 
 
