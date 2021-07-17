@@ -16,6 +16,7 @@ class Espaco_Aberto extends Model {
     static associate(models) {
         this.belongsTo(models.Filial, {foreignKey: 'id', as: 'filial'});
         this.belongsTo(models.Administrador, {foreignKey: 'username', as: 'adm_criador'});
+        this.hasMany(models.Ocorrencia_Espaco_Aberto, {foreignKey: 'id', as: 'ocorrencias'});
     }
 }
 
