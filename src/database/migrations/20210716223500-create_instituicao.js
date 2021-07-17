@@ -21,6 +21,9 @@ module.exports = {
       username_criador: {
         type:  Sequelize.STRING(20),
         allowNull: false,
+        references: { model: 'administradores', key: 'username'},
+        onUpdate: 'SET NULL',
+        onDelete: 'SET NULL',
       },
     });
 
