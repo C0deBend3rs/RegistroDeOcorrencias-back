@@ -18,7 +18,7 @@ class Usuario extends Model {
         this.hasOne(models.Solicitante, {foreignKey: 'username', as: 'solicitante'});
         this.hasMany(models.Ocorrencia, {foreignKey: 'username', as: 'ocorrencias'});
         this.hasMany(models.Comentario, {foreignKey: 'username', as: 'comentarios'});
-
+        this.belongsToMany(models.Filial, {foreignKey: 'username', through: 'usuario_filial', as: 'filiais'});
     }
 }
 

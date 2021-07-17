@@ -24,6 +24,7 @@ class Filial extends Model {
         this.belongsTo(models.Administrador, {foreignKey: 'username', as: 'adm_criador'});
         this.hasMany(models.Predio, {foreignKey: 'id', as: 'predios'});
         this.hasMany(models.Espaco_Aberto, {foreignKey: 'id', as: 'espacos_abertos'});
+        this.belongsToMany(models.Usuario, {foreignKey: 'id', through: 'usuario_filial', as: 'usuarios'});
     }
 }
 
