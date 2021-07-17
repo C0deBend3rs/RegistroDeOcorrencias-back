@@ -5,7 +5,7 @@ module.exports = {
 
     await queryInterface.createTable('usuario_filial', { 
       usuario: {
-        type:  Sequelize.STRIG(20),
+        type:  Sequelize.STRING(20),
         primaryKey: true,
         allowNull: false,
         references: { model: 'usuarios', key: 'username'},
