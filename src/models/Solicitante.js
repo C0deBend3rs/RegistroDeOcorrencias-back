@@ -10,7 +10,7 @@ class Solicitante extends Model {
     }
 
     static associate(models) {
-        this.belongsTo(models.Usuario, {foreignKey: 'username', as: 'user'});
+        this.belongsTo(models.Usuario, {foreignKey: 'id', as: 'user'});
     }
 }
 

@@ -4,6 +4,7 @@ class Usuario extends Model {
     static init(sequelize){
         super.init({
             username: DataTypes.STRING(20),
+            username_criador: DataTypes.STRING(20)
         }, {
             sequelize,
             tableName: 'usuarios'
@@ -11,14 +12,12 @@ class Usuario extends Model {
     }
 
     static associate(models) {
-        this.belongsTo(models.Usuario, {foreignKey: 'username_criador', as: 'user_criador'});
-        this.hasMany(models.Usuario, {foreignKey: 'username_criador', as: 'users_criados'});
-        this.hasOne(models.Administrador, {foreignKey: 'username', as: 'adm'});
-        this.hasOne(models.Gerenciador, {foreignKey: 'username', as: 'gerenciador'});
-        this.hasOne(models.Solicitante, {foreignKey: 'username', as: 'solicitante'});
-        this.hasMany(models.Ocorrencia, {foreignKey: 'username', as: 'ocorrencias'});
-        this.hasMany(models.Comentario, {foreignKey: 'username', as: 'comentarios'});
-        this.belongsToMany(models.Filial, {foreignKey: 'username', through: 'usuario_filial', as: 'filiais'});
+        this.hasOne(models.Administrador, {foreignKey: 'id', as: 'adm'});
+        this.hasOne(models.Gerenciador, {foreignKey: 'id', as: 'gerenciador'});
+        this.hasOne(models.Solicitante, {foreignKey: 'id', as: 'solicitante'});
+        this.hasMany(models.Ocorrencia, {foreignKey: 'id', as: 'ocorrencias'});
+        this.hasMany(models.Comentario, {foreignKey: 'id', as: 'comentarios'});
+        this.belongsToMany(models.Filial, {foreignKey: 'id', through: 'usuario_filial', as: 'filiais'});
     }
 }
 

@@ -12,7 +12,7 @@ class Instituicao extends Model {
     }
 
     static associate(models) {
-        this.belongsTo(models.Administrador, {foreignKey: 'username', as: 'adm_criador'});
+        this.belongsTo(models.Administrador, {foreignKey: 'id', as: 'adm_criador'});
         this.hasMany(models.Filial, {foreignKey: 'id', as: 'filiais'});
     }
 }

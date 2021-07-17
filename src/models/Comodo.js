@@ -15,7 +15,7 @@ class Comodo extends Model {
 
     static associate(models) {
         this.belongsTo(models.Predio, {foreignKey: 'id', as: 'predio'});
-        this.belongsTo(models.Administrador, {foreignKey: 'username', as: 'adm_criador'});
+        this.belongsTo(models.Administrador, {foreignKey: 'id', as: 'adm_criador'});
         this.hasMany(models.Ocorrencia_Comodo, {foreignKey: 'id', as: 'ocorrencias'});
     }
 }

@@ -11,7 +11,7 @@ class Comentario extends Model {
     }
 
     static associate(models) {
-        this.belongsTo(models.Usuario, {foreignKey: 'username', as: 'usuario_criador'});
+        this.belongsTo(models.Usuario, {foreignKey: 'id', as: 'usuario_criador'});
         this.belongsTo(models.Ocorrencia, {foreignKey: 'id', as: 'ocorrencia'});
     }
 }

@@ -33,17 +33,21 @@ module.exports = {
         type: Sequelize.STRING(64),
         allowNull: false,
       },
+      id_criador: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'administradores', key: 'id'},
+        onUpdate: 'SET NULL',
+        onDelete: 'SET NULL',
+      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
       }, 
-      username: {
-        type: Sequelize.STRING(20),
+      updated_at: {
+        type: Sequelize.DATE,
         allowNull: false,
-        references: { model: 'administradores', key: 'username'},
-        onUpdate: 'SET NULL',
-        onDelete: 'SET NULL',
-      },
+      }, 
 
     });
 

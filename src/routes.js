@@ -1,6 +1,8 @@
 const express = require('express');
+
+const UsuarioController = require('./controllers/UsuarioController');
+const AdministradorController = require('./controllers/AdministradorController');
 /*
-const UserController = require('./controllers/UserController');
 const AddressController = require('./controllers/AddressController');
 const TechController = require('./controllers/TechController');
 const ReportController = require('./controllers/ReportController');
@@ -8,8 +10,18 @@ const ReportController = require('./controllers/ReportController');
 
 const routes = express.Router();
 
-/*
-routes.get('/users', UserController.index);    
+
+routes.post('/users', UsuarioController.store);   
+routes.get('/users', UsuarioController.index);
+routes.get('/users/:username', UsuarioController.search);
+
+
+routes.post('/adms', AdministradorController.store);  
+routes.get('/adms', AdministradorController.index);   
+routes.get('/adms/:username', AdministradorController.search);   
+
+
+/* 
 routes.post('/users', UserController.store);  
 routes.get('/users/:user_id', UserController.search);  
 

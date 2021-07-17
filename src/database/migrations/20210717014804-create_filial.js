@@ -25,10 +25,6 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: true
       },
-      created_at: {
-        type: Sequelize.DATE,
-        allowNull: false,
-      }, 
       cidade: {
         type: Sequelize.STRING(255),
         allowNull: true,
@@ -61,14 +57,21 @@ module.exports = {
         type: Sequelize.STRING(64),
         allowNull: false,
       },
-      username: {
-        type: Sequelize.STRING(20),
+      id_criador: {
+        type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model: 'administradores', key: 'username'},
+        references: { model: 'administradores', key: 'id'},
         onUpdate: 'SET NULL',
         onDelete: 'SET NULL',
       },
-
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      }, 
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      }, 
     });
 
   },

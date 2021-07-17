@@ -4,11 +4,17 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
 
     await queryInterface.createTable('usuario_filial', { 
+      id: {
+        type:  Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false,
+      },
       usuario: {
-        type:  Sequelize.STRING(20),
+        type:  Sequelize.INTEGER,
         primaryKey: true,
         allowNull: false,
-        references: { model: 'usuarios', key: 'username'},
+        references: { model: 'usuarios', key: 'id'},
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
@@ -19,6 +25,16 @@ module.exports = {
         references: { model: 'filiais', key: 'id'},
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
+      },
+      created_at: {
+        type:  Sequelize.DATE,
+        primaryKey: false,
+        allowNull: false,
+      },
+      updated_at: {
+        type:  Sequelize.DATE,
+        primaryKey: false,
+        allowNull: false,
       },
     });
 

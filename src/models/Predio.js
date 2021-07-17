@@ -15,7 +15,7 @@ class Predio extends Model {
 
     static associate(models) {
         this.belongsTo(models.Filial, {foreignKey: 'id', as: 'filial'});
-        this.belongsTo(models.Administrador, {foreignKey: 'username', as: 'adm_criador'});
+        this.belongsTo(models.Administrador, {foreignKey: 'id', as: 'adm_criador'});
         this.hasMany(models.Comodo, {foreignKey: 'id', as: 'comodos'});
     }
 }

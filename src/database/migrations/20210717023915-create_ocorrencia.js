@@ -22,13 +22,21 @@ module.exports = {
         type:  Sequelize.STRING(16),
         allowNull: true,
       },
-      username: {
-        type:  Sequelize.STRING(20),
+      id_criador: {
+        type:  Sequelize.INTEGER,
         allowNull: false,
-        references: { model: 'usuarios', key: 'username'},
+        references: { model: 'usuarios', key: 'id'},
         onUpdate: 'NO ACTION',
         onDelete: 'NO ACTION',
       },
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      }, 
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      }, 
     });
 
   },
