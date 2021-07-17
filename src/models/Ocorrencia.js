@@ -14,6 +14,7 @@ class Ocorrencia extends Model {
 
     static associate(models) {
         this.belongsTo(models.Usuario, {foreignKey: 'username', as: 'usuario_criador'});
+        this.hasMany(models.Comentario, {foreignKey: 'id', as: 'comentarios'});
     }
 }
 

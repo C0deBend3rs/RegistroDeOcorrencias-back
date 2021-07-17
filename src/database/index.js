@@ -11,6 +11,7 @@ const Predio = require('../models/Predio');
 const Comodo = require('../models/Comodo');
 const Espaco_Aberto = require('../models/Espaco_Aberto');
 const Ocorrencia = require('../models/Ocorrencia');
+const Comentario = require('../models/Comentario');
 
 
 
@@ -27,6 +28,8 @@ Predio.init(connection);
 Comodo.init(connection);
 Espaco_Aberto.init(connection);
 Ocorrencia.init(connection);
+Comentario.init(connection);
+
 
 
 
@@ -41,6 +44,7 @@ Predio.associate(connection.models);
 Comodo.associate(connection.models);
 Espaco_Aberto.associate(connection.models);
 Ocorrencia.associate(connection.models);
+Comentario.associate(connection.models);
 
 
 
