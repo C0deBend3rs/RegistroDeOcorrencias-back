@@ -8,6 +8,8 @@ const Gerenciador = require('../models/Gerenciador');
 const Solicitante = require('../models/Solicitante');
 const Filial = require('../models/Filial');
 const Predio = require('../models/Predio');
+const Comodo = require('../models/Comodo');
+
 
 
 
@@ -20,6 +22,7 @@ Gerenciador.init(connection);
 Solicitante.init(connection);
 Filial.init(connection);
 Predio.init(connection);
+Comodo.init(connection);
 
 
 
@@ -30,6 +33,8 @@ Gerenciador.associate(connection.models);
 Solicitante.associate(connection.models);
 Filial.associate(connection.models);
 Predio.associate(connection.models);
+Comodo.associate(connection.models);
+
 
 
 
