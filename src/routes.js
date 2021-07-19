@@ -11,9 +11,10 @@ const ReportController = require('./controllers/ReportController');
 const routes = express.Router();
 
 
-routes.post('/users', UsuarioController.store);   
+routes.post('/users/register', UsuarioController.store);   
+routes.post('/users/login', UsuarioController.login);  
 routes.get('/users', UsuarioController.index);
-routes.get('/users/:username', UsuarioController.search);
+//routes.get('/users/:username', UsuarioController.search);
 
 
 routes.post('/adms', AdministradorController.store);  

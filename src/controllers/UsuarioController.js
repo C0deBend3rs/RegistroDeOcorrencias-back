@@ -9,13 +9,14 @@ module.exports = {
         return res.json(users);
     },
 
-    async search(req, res) {
-        const {username} = req.params;
+    async login(req, res) {
+        const {username, password} = req.body;
         
         const user = await Usuario.findOne({
             where: {
-                username: username
+                [Op.and]: [{username: username}, {password: password}]
             }
+            
         });
 
         if(!user){
@@ -30,7 +31,8 @@ module.exports = {
        
         const user = await Usuario.create({
             username: req.body.username,
-            username_criador: req.body.username_criador
+            username_criador: req.body.username_criador,
+            password: req.body.password
         });
      
         return res.json(user);

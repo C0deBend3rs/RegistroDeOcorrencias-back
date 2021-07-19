@@ -4,7 +4,8 @@ class Usuario extends Model {
     static init(sequelize){
         super.init({
             username: DataTypes.STRING(20),
-            username_criador: DataTypes.STRING(20)
+            username_criador: DataTypes.STRING(20),
+            password: DataTypes.STRING(25)
         }, {
             sequelize,
             tableName: 'usuarios'
