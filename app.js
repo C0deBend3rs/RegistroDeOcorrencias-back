@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 3333
+express.use(cors())
+
+
 
 app.get('/', (req, res) => {
   res.send('<h1 style="color : blue;"> MasterOfNotas Back-End! <\h1>')
