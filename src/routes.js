@@ -10,12 +10,9 @@ const ReportController = require('./controllers/ReportController');
 
 const routes = express.Router();
 
-routes.use((req, res, next) => {
-	//Qual site tem permissão de realizar a conexão, no exemplo abaixo está o "*" indicando que qualquer site pode fazer a conexão
+routes.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
-	//Quais são os métodos que a conexão pode realizar na API
-    res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
-    routes.use(cors());
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
 
