@@ -17,7 +17,6 @@ const Ocorrencia_Comodo = require('../models/Ocorrencia_Comodo');
 
 
 
-
 const connection = new Sequelize(dbConfig);
 
 Usuario.init(connection);
@@ -33,8 +32,6 @@ Ocorrencia.init(connection);
 Comentario.init(connection);
 Ocorrencia_Espaco_Aberto.init(connection);
 Ocorrencia_Comodo.init(connection);
-
-
 
 
 

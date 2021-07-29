@@ -10,11 +10,6 @@ const ReportController = require('./controllers/ReportController');
 
 const routes = express.Router();
 
-routes.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
 
 routes.post('/users/register', UsuarioController.store);   
 routes.post('/users/login', UsuarioController.login);  
