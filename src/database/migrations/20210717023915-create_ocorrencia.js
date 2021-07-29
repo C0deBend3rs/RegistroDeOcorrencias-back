@@ -14,8 +14,17 @@ module.exports = {
         type:  Sequelize.STRING(500),
         allowNull: true,
       },
+      titulo: {
+        type: Sequelize.STRING(50),
+        allowNull: false,
+      },
+      url: {
+        type:  Sequelize.STRING(200),
+        allowNull: true,
+      },
       status: {
         type:  Sequelize.STRING(16),
+        defaultValue: 'Aberto',
         allowNull: true,
       },
       prioridade: {

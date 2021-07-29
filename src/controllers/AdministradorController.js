@@ -1,13 +1,10 @@
 const Administrador = require('../models/Administrador');
 const Usuario = require('../models/Usuario');
-const {Op, QueryTypes} = require('sequelize');
-const { use } = require('../routes');
 
 module.exports = {
 
     async index(req, res) {
-        //const adms = await Administrador.findAll();
-        const adms = await sequelize.query("SELECT * FROM `administradores`", { type: QueryTypes.SELECT });
+        const adms = await Administrador.findAll();
         return res.json(adms);
     },
 
@@ -31,7 +28,8 @@ module.exports = {
     async store(req, res) {
        
         const adm = await Administrador.create({
-            username: req.body.username,
+            id: req.body.id_user,
+            username: req.body.username
         });
      
         return res.json(adm);

@@ -21,6 +21,10 @@ module.exports = {
         onUpdate: 'SET NULL',
         onDelete: 'SET NULL',
       },
+      data_fund:{
+        type: Sequelize.DATE,
+        allowNull: true
+      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
