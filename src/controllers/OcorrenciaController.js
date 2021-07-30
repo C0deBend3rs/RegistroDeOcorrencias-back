@@ -10,14 +10,11 @@ module.exports = {
     },
 
     async search(req, res){
-        const {filial_id} = req.params;
+        const {ocorrencia_id} = req.params;
 
-        const espacos = await Espaco_Aberto.findAll({
-            attributes: ['id', 'nome'],
-            include: {association: 'filial', where: {id: filial_id}, attributes:[]},
-        })
+        const ocorrencia = await Ocorrencia.findByPk(ocorrencia_id);
 
-        return res.json(espacos);
+        return res.json(ocorrencia);
     },
 
     async store(req, res) {

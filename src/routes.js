@@ -39,6 +39,7 @@ routes.get('/espaco-aberto/:filial_id', Espaco_AbertoController.search);
 
 
 routes.get('/ocorrencias', OcorrenciaController.index);
+routes.get('/ocorrencias/:ocorrencia_id', OcorrenciaController.search);
 routes.post('/ocorrencias', OcorrenciaController.store);
 
 
