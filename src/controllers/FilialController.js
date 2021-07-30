@@ -15,7 +15,7 @@ module.exports = {
 
         const filiais = await Filial.findAll({
             attributes: ['id', 'nome'],
-            include: {association: 'usuarios', where: {id: instituicao_id}, attributes:[]},
+            include: {association: 'instituicao', where: {id: instituicao_id}, attributes:[]},
         })
 
         return res.json(filiais);
