@@ -18,7 +18,7 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      id_espaco_aberto: {
+      id_comodo: {
         type:  Sequelize.INTEGER,
         allowNull: false,
         references: { model: 'comodos', key: 'id'},
