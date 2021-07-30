@@ -22,10 +22,11 @@ routes.get('/adms', AdministradorController.index);
 routes.get('/adms/:username', AdministradorController.search);   
 
 routes.get('/instituicoes', InstituicaoController.index);
+routes.get('/instituicoes/:user_id', InstituicaoController.search);
 routes.post('/instituicoes', InstituicaoController.store);
 
 routes.get('/filiais', FilialController.index);   
-routes.get('/filiais/:user_id', FilialController.search);   
+routes.get('/filiais/:instituicao_id', FilialController.search);   
 
 routes.get('/predios', PredioController.index);
 routes.get('/predios/:filial_id', PredioController.search);

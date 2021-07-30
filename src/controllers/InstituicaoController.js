@@ -1,5 +1,4 @@
 const Instituicao = require('../models/Instituicao');
-const Administrador = require("../models/Administrador");
 const {Op} = require('sequelize');
 
 module.exports = {
@@ -7,6 +6,18 @@ module.exports = {
     async index(req, res) {
         const instituicoes = await Instituicao.findAll();
         return res.json(instituicoes);
+    },
+
+    async search(req, res) {
+        const {user_id} = req.params
+        const instituicoes = await Instituicao.findAll({
+            attributes: ['id', 'nome'],
+            include: {association: 'filiais', attributes:[], include:{
+                association: 'usuarios', where: {id:user_id}, attributes:[]
+            }}
+        })
+
+        return res.json(instituicoes)
     },
 
     async store(req, res) {

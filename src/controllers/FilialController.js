@@ -1,5 +1,5 @@
 const Filial = require('../models/Filial');
-const Usuario = require("../models/Usuario");
+const Instituicao = require("../models/Instituicao");
 
 module.exports = {
 
@@ -9,13 +9,13 @@ module.exports = {
     },
 
     async search(req, res){
-        const {user_id} = req.params;
+        const {instituicao_id} = req.params;
 
-        const user = await Usuario.findByPk(user_id);
+        const user = await Instituicao.findByPk(instituicao_id);
 
         const filiais = await Filial.findAll({
             attributes: ['id', 'nome'],
-            include: {association: 'usuarios', where: {id: user_id}, attributes:[]},
+            include: {association: 'usuarios', where: {id: instituicao_id}, attributes:[]},
         })
 
         return res.json(filiais);
