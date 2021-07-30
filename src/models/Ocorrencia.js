@@ -4,7 +4,7 @@ class Ocorrencia extends Model {
     static init(sequelize){
         super.init({
             descricao: DataTypes.STRING(500),
-            status: DataTypes.STRING(16),
+            status: {type: DataTypes.STRING(16), defaultValue: 'Aberto'},
             prioridade: DataTypes.STRING(16),
             titulo: DataTypes.STRING(50),
             url: DataTypes.STRING(200),
