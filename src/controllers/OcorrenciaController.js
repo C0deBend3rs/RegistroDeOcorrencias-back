@@ -16,6 +16,18 @@ module.exports = {
 
         return res.json(ocorrencia);
     },
+    
+    async searchbyuser(req, res){
+        const {user_id} = req.params;
+
+        const ocorrencias = await Ocorrencia.findAll({
+            where: {
+                id_criador: user_id
+            }
+        })
+
+        return res.json(ocorrencias);
+    },
 
     async store(req, res) {
         const {titulo, desc, prioridade, espaco, comodo, userId, url} = req.body;
