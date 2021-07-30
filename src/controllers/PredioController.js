@@ -4,7 +4,9 @@ const Filial = require("../models/Filial");
 module.exports = {
 
     async index(req, res) {
-        const predios = await Predio.findAll();
+        const predios = await Predio.findAll({
+            include:{association: 'filial'}
+        });
         return res.json(predios);
     },
 

@@ -4,7 +4,7 @@ const Instituicao = require("../models/Instituicao");
 module.exports = {
 
     async index(req, res) {
-        const filiais = await Filial.findAll({include: {association: 'instituicao'}});
+        const filiais = await Filial.findAll({include: {association: 'predios'}});
         return res.json(filiais);
     },
 
