@@ -42,6 +42,7 @@ routes.get('/ocorrencias', OcorrenciaController.index);
 routes.get('/ocorrencias/:ocorrencia_id', OcorrenciaController.search);
 routes.get('/ocorrencias/user/:user_id', OcorrenciaController.searchbyuser);
 routes.post('/ocorrencias', OcorrenciaController.store);
+routes.delete('/ocorrencias/:ocorrencia_id', OcorrenciaController.delete);
 
 
 module.exports = routes;    

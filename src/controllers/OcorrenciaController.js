@@ -54,5 +54,19 @@ module.exports = {
         }
      
         return res.json(ocorrencia);
-    }
+    },
+
+    async delete(req, res){
+        const {ocorrencia_id} = req.params;
+
+        const ocorrencia = await Ocorrencia.findByPk(ocorrencia_id);
+
+        if(!ocorrencia){
+            return res.status(400).json({ error: 'User not found'});
+        }
+
+        Ocorrencia.destroy({where: {id: ocorrencia_id}})
+
+        return res.json({success: "Ocorrência removida"});
+    },
 } 
